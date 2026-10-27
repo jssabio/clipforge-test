@@ -35,3 +35,8 @@ Alternatively, from this directory run `npx vercel` and follow the CLI prompts a
 - FFmpeg core is loaded from unpkg at runtime. For production, consider self-hosting the FFmpeg core assets and reviewing license notices for the exact dependency versions.
 - The frame-rate setting re-encodes to the selected rate and may change motion cadence. The resolution option caps the output height; it does not upscale lower-resolution sources.
 - This is a starter implementation, not a full reproduction of CompressBase. It does not include TikTok integration, account/authentication, server-side anti-lag processing, video URL extraction, usage quotas, or API-based video analysis.
+
+
+### 120 FPS output
+
+The frame-rate selector supports 24, 30, 60, and 120 FPS. Selecting 120 FPS sets the FFmpeg output frame rate to 120. For genuine 120 FPS motion, use source footage captured at 120 FPS; converting lower-frame-rate footage can duplicate frames and does not create new motion detail. Browser/WASM encoding performance depends on the device and video resolution.
